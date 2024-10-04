@@ -68,7 +68,7 @@ void Mini_db::loadBackup()
     while (true) {
         size_t keyLength;
         ifs.read(reinterpret_cast<char*>(&keyLength), sizeof(keyLength));
-        if (ifs.eof()) break;
+        if (ifs.eof()) break; // Sortir si on atteint la fin du fichier
 
         char* keyBuffer = new char[keyLength + 1]; // +1 pour le caractère nul
         ifs.read(keyBuffer, keyLength);
